@@ -1,16 +1,48 @@
-# React + Vite
+# AI Study Assistant — Intelligent Learning Platform #
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An AI-powered academic assistant built on the **MERN** stack (MongoDB, Express.js, React, Node.js) and powered by **Google Gemini API**. Designed for college students and self-learners to accelerate conceptual mastery, generate revision notes, create interactive quizzes, build personalized study roadmaps, and interact with uploaded course materials.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Key Features
 
-## React Compiler
+**Secure Authentication**: User registration and login using salted password hashing (`bcryptjs`) and stateless session management with **JSON Web Tokens (JWT)**.
+**AI Tutor Chat**: Multi-turn, context-aware conversational tutoring with customizable difficulty levels (*Beginner*, *Intermediate*, *Advanced*) and auto-titling.
+**High-Yield Study Notes**: Structured, exam-ready revision notes formatted in clean Markdown with key concepts, pitfalls, and cheat-sheets.
+**MCQ Quiz Arena**: 
+  * Generates multiple-choice questions with clickable radio buttons.
+  * Answers and explanations stay hidden until submission.
+  * Real-time automated scoring with confetti celebration for high scores.
+  * Comprehensive explanations and "Try Again" functionality.
+ **Personalized Study Plans**: Customizable day-by-day learning roadmaps rendered as visual timeline cards with interactive task checklists.
+**Saved Items Library**: Unified library to filter, search, review, and delete saved notes, quizzes, and roadmaps
+**Client-Side Export**: Download notes as `.md`, quizzes as `.txt`/`.json`, roadmaps as `.md`, or copy formatted text with one-click clipboard tools.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Frontend
+* **React 19** with **Vite**
+* **JavaScript (ES6+)**
+* **Tailwind CSS v4** (Modern dark-mode SaaS UI)
+* **React Router v7** (Declarative routing & protected routes)
+* **Axios** (API requests with automatic JWT interceptors)
+* **Lucide React** (Clean SVG icons)
+* **React Markdown** (Syntax and markdown rendering)
+* **Canvas Confetti** (Celebratory quiz animations)
+
+### Backend
+* **Node.js** & **Express.js** (ES Modules)
+* **MongoDB** with **Mongoose ODM**
+* **JWT (jsonwebtoken)** & **bcryptjs**
+* **Multer** (File upload handler)
+* **pdf-parse** (PDF text extraction)
+* **CORS** & **Dotenv**
+
+### AI Engine
+* **Google Gemini API** (`@google/genai` SDK)
+* Zero frontend API key exposure (API key strictly protected in backend `.env`)
+* Automatic fallback model cascade (`gemini-2.0-flash` ➔ `gemini-1.5-flash` ➔ `gemini-2.0-flash-lite`)
+
+---
